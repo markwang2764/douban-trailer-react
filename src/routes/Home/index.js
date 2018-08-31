@@ -4,7 +4,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        fucking shit
+        fucking shitdsadsa
         <div>dsadhewqdsadsa</div>
       </div>
     )
