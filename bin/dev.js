@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const webpackOptions = require('../build/webpack.base')
+const webpackOptions = require('../build/webpack.dev')
 const opn = require('opn'); 
 const path = require('path')
 
