@@ -14,7 +14,8 @@ module.exports = smart(baseConfig, {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[chunkhash].js',
-    chunkFilename: 'chunks/[name].[chunkhash].min.js'
+    chunkFilename: 'chunks/[name].[chunkhash].min.js',
+    publicPath: '',
   },
 
   optimization: {

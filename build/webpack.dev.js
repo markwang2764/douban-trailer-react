@@ -1,5 +1,7 @@
 const { smart } = require('webpack-merge')
 const webpack = require('webpack')
+const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
+
 const baseConfig = require('./webpack.base')
 const path = require('path')
 
@@ -28,10 +30,21 @@ module.exports = smart(baseConfig, {
     hints: false
   },
 
-  devtool: 'source-map',
-
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new FriendlyErrorsPlugin({
+      compilationSuccessInfo: {
+        messages: [`Your application is running here: http://${host}:${port}`],
+        notes: ['Some additionnal notes to be displayed unpon successful compilation']
+      },
+      // should the console be cleared between each compilation?
+      // default is true
+      clearConsole: true
+    }),
+    new webpack.DefinePlugin({
+      DEBUG: true,
+      VERSION: '1'
+    })
   ]
 })
 

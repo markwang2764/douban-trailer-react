@@ -66,7 +66,7 @@ module.exports = {
         test: /\.css$/,
         use: ExtracTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
+          use: ['css-loader', 'postcss-loader']
         })
       },
 
@@ -74,7 +74,7 @@ module.exports = {
         test: /\.less$/,
         use: ExtracTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'less-loader']
+          use: ['css-loader', 'less-loader', 'postcss-loader']
         })
       },
 

@@ -26,9 +26,18 @@ app.use(devMiddlerware(compiler, {
 app.use(hotMiddlerware(compiler, {
   log: false
 }));
-
+app.use(histroyApiFallback(
+  {
+    disableDotRule: true,//处理文件后缀的404
+    htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']
+  }
+));
 app.use(express.static('.'));
-
+app.get('*', function (req, res) {
+  console.log(req.url);
+  
+  // res.redirect('/')
+});
 
 const chalk = require('chalk');
 let browserUrl = `http://localhost:3000`

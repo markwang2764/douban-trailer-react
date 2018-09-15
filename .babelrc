@@ -1,4 +1,14 @@
 {
-  "presets": ["env", "react", "stage-2"],
-  "plugins": ["transform-runtime", "transform-decorators-legacy"]
+  "presets": [
+    ["env", {
+      "loose": false,
+      "modules": false
+    }],
+    "react",
+    "stage-2"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy"
+  ]
 }
